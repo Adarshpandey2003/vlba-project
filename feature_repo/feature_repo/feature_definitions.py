@@ -28,14 +28,29 @@ file_source= FileSource(
     timestamp_field="event_timestamp",
 )
 
+
 #predictor fv
 predictor_fv=FeatureView(
     name="predictor_features",
     entities=[customer],
     ttl=timedelta(days=3),
     schema=[
-        Field(name="age", dtype=Int64),
+        Field(name="age", dtype=Float32),
         Field(name="flight_distance", dtype=Float32),
+        Field(name="seat_comfort", dtype=Int64),
+        Field(name="departure_arrival_time_convenient", dtype=Int64),
+        Field(name="food_and_drink", dtype=Int64),
+        Field(name="gate_location", dtype=Int64),
+        Field(name="inflight_wifi_service", dtype=Int64),
+        Field(name="inflight_entertainment", dtype=Int64),
+        Field(name="online_support", dtype=Int64),
+        Field(name="ease_of_online_booking", dtype=Int64),
+        Field(name="onboard_service", dtype=Int64),
+        Field(name="leg_room_service", dtype=Int64),
+        Field(name="baggage_handling", dtype=Int64),
+        Field(name="checkin_service", dtype=Int64),
+        Field(name="cleanliness", dtype=Int64),
+        Field(name="online_boarding", dtype=Int64),
         Field(name="departure_delay", dtype=Float32),
         Field(name="arrival_delay", dtype=Float32),
         Field(name="total_service_score", dtype=Float32),
